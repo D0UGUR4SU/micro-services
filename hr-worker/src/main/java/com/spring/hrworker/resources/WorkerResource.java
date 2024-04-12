@@ -16,12 +16,8 @@ import com.spring.hrworker.repositories.WorkerRepository;
 @RequestMapping(value = "/workers")
 public class WorkerResource {
 	
-	private final WorkerRepository workerRepository;
-	
 	@Autowired
-	public WorkerResource(WorkerRepository workerRepository) {
-		this.workerRepository = workerRepository;
-	}
+	private WorkerRepository workerRepository;
 	
 	@GetMapping
 	public ResponseEntity<List<Worker>> findAll() {
@@ -30,7 +26,7 @@ public class WorkerResource {
 	}
 	
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<Worker> findbyId(@PathVariable(value = "id") Long id) {
+	public ResponseEntity<Worker> findbyId(@PathVariable Long id) {
 		Worker worker = workerRepository.findById(id).get();
 		return ResponseEntity.ok(worker);
 	}
