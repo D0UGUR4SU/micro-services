@@ -10,7 +10,7 @@
 			"name": "hr-worker",
 			"item": [
 				{
-					"name": "GET workers",
+					"name": "All workers",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -29,12 +29,12 @@
 					"response": []
 				},
 				{
-					"name": "GET worker by id",
+					"name": "Worker by id",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8001/workers/2",
+							"raw": "http://localhost:8001/workers/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -42,7 +42,34 @@
 							"port": "8001",
 							"path": [
 								"workers",
-								"2"
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "hr-payroll",
+			"item": [
+				{
+					"name": "Payment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8101/payments/1/days/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8101",
+							"path": [
+								"payments",
+								"1",
+								"days",
+								"5"
 							]
 						}
 					},
