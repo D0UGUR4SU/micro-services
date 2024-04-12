@@ -11,7 +11,6 @@ public class Payment implements Serializable {
 	private Integer days;
 
 	public Payment() {
-
 	}
 
 	public Payment(String name, Double dailyIncome, Integer days) {
@@ -45,7 +44,7 @@ public class Payment implements Serializable {
 		this.days = days;
 	}
 
-	public Double getTotal() {
+	public double getTotal() {
 		return days * dailyIncome;
 	}
 }

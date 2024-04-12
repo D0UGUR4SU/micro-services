@@ -20,12 +20,15 @@ import com.spring.hrworker.repositories.WorkerRepository;
 public class WorkerResource {
 	
 	private static Logger logger = LoggerFactory.getLogger(WorkerResource.class);
-	
+
+	private final Environment env;
+	private final WorkerRepository workerRepository;
+
 	@Autowired
-	private Environment env;
-	
-	@Autowired
-	private WorkerRepository workerRepository;
+	public WorkerResource(Environment env, WorkerRepository workerRepository) {
+		this.env = env;
+		this.workerRepository = workerRepository;
+	}
 	
 	@GetMapping
 	public ResponseEntity<List<Worker>> findAll() {
@@ -33,7 +36,7 @@ public class WorkerResource {
 		return ResponseEntity.ok(list);
 	}
 	
-	@GetMapping(value = "/{id}")
+	@GetMapping("/{id}")
 	public ResponseEntity<Worker> findbyId(@PathVariable Long id) {
 		
 		logger.info("PORT = " + env.getProperty("local.server.port"));

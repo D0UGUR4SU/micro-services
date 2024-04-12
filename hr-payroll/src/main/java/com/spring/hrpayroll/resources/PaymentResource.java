@@ -1,8 +1,7 @@
 
 package com.spring.hrpayroll.resources;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,23 +12,20 @@ import com.spring.hrpayroll.entities.Payment;
 import com.spring.hrpayroll.services.PaymentService;
 
 @RestController
-@RequestMapping("/payments")
+@RequestMapping(value = "/payments")
 public class PaymentResource {
 
-	private static Logger logger = LoggerFactory.getLogger(PaymentResource.class);
-	private final PaymentService paymentService;
+	private final PaymentService service;
 
-	public PaymentResource(PaymentService paymentService) {
-		this.paymentService = paymentService;
+	@Autowired
+	public PaymentResource(PaymentService service) {
+		this.service = service;
 	}
 
 	@GetMapping(value = "/{workerId}/days/{days}")
-	public ResponseEntity<Payment> getPayment(@PathVariable(name = "workerId") Long workerId,
-			@PathVariable(name = "days") Integer days) {
-		
-		Payment payment = paymentService.getPayment(workerId, days);
-		logger.info("Buscando pagamento: " + payment);
-		
+	public ResponseEntity<Payment> getPayment(@PathVariable Long workerId, @PathVariable Integer days) {
+		Payment payment = service.getPayment(workerId, days);
 		return ResponseEntity.ok(payment);
 	}
+
 }
