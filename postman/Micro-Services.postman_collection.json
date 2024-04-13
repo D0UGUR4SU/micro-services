@@ -201,6 +201,36 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "hr-oauth",
+			"item": [
+				{
+					"name": "Find user by email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_GATEWAY}}/hr-oauth/users/search?email=bob@email.com",
+							"host": [
+								"{{API_GATEWAY}}"
+							],
+							"path": [
+								"hr-oauth",
+								"users",
+								"search"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "bob@email.com"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
