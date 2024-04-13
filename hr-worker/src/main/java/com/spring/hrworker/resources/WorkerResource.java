@@ -25,9 +25,6 @@ public class WorkerResource {
 
 	private final WorkerRepository workerRepository;
 
-	@Value("${test.config}")
-	private String testConfig;
-
 	@Autowired
 	public WorkerResource(WorkerRepository workerRepository) {
 		this.workerRepository = workerRepository;
@@ -36,7 +33,7 @@ public class WorkerResource {
 	@GetMapping("/configs")
 	public ResponseEntity<Void> getConfigs() {
 
-		logger.info("CONFIG = {}", testConfig);
+		//logger.info("CONFIG = {}", testConfig);
 		return ResponseEntity.noContent().build();
 	}
 	
