@@ -229,6 +229,60 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "myappsecret123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "myappname123",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "bob@email.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{API_GATEWAY}}/hr-oauth/oauth/token",
+							"host": [
+								"{{API_GATEWAY}}"
+							],
+							"path": [
+								"hr-oauth",
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
