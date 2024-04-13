@@ -152,6 +152,55 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "hr-user",
+			"item": [
+				{
+					"name": "Find user by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_GATEWAY}}/hr-user/users/1",
+							"host": [
+								"{{API_GATEWAY}}"
+							],
+							"path": [
+								"hr-user",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find user by email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_GATEWAY}}/hr-user/users/search?email=bob@email.com",
+							"host": [
+								"{{API_GATEWAY}}"
+							],
+							"path": [
+								"hr-user",
+								"users",
+								"search"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "bob@email.com"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
