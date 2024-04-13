@@ -2,8 +2,10 @@ package com.spring.hrapigatewayzuul;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
-@EurekaClient
+@EnableEurekaClient
 @EnableZuulProxy
 @SpringBootApplication
 public class ApiGatewayZuulApplication {

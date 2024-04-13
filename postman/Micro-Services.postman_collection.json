@@ -15,13 +15,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8001/workers",
-							"protocol": "http",
+							"raw": "{{API_GATEWAY}}/hr-worker/workers",
 							"host": [
-								"localhost"
+								"{{API_GATEWAY}}"
 							],
-							"port": "8001",
 							"path": [
+								"hr-worker",
 								"workers"
 							]
 						}
@@ -34,13 +33,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8001/workers/1",
-							"protocol": "http",
+							"raw": "{{API_GATEWAY}}/hr-worker/workers/1",
 							"host": [
-								"localhost"
+								"{{API_GATEWAY}}"
 							],
-							"port": "8001",
 							"path": [
+								"hr-worker",
 								"workers",
 								"1"
 							]
@@ -59,17 +57,16 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8101/payments/1/days/5",
-							"protocol": "http",
+							"raw": "{{API_GATEWAY}}/hr-payroll/payments/2/days/20",
 							"host": [
-								"localhost"
+								"{{API_GATEWAY}}"
 							],
-							"port": "8101",
 							"path": [
+								"hr-payroll",
 								"payments",
-								"1",
+								"2",
 								"days",
-								"5"
+								"20"
 							]
 						}
 					},
