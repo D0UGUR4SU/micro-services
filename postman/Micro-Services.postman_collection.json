@@ -45,6 +45,25 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Show worker configs on console",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_GATEWAY}}/hr-worker/workers/configs",
+							"host": [
+								"{{API_GATEWAY}}"
+							],
+							"path": [
+								"hr-worker",
+								"workers",
+								"configs"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
