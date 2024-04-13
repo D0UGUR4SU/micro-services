@@ -1,6 +1,7 @@
 package com.spring.hroauth.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -16,17 +17,27 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 @EnableAuthorizationServer
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
-    @Autowired
-    private BCryptPasswordEncoder passwordEncoder;
+    @Value("${oauth.client.name}")
+    private String clientName;
+
+    @Value("${oauth.client.secret}")
+    private String clientSecret;
+
+    private final BCryptPasswordEncoder passwordEncoder;
+    private final JwtAccessTokenConverter accessTokenConverter;
+    private final JwtTokenStore tokenStore;
+    private final AuthenticationManager authenticationManager;
 
     @Autowired
-    private JwtAccessTokenConverter accessTokenConverter;
-
-    @Autowired
-    private JwtTokenStore tokenStore;
-
-    @Autowired
-    private AuthenticationManager authenticationManager;
+    public AuthorizationServerConfig(BCryptPasswordEncoder passwordEncoder,
+                                     JwtAccessTokenConverter accessTokenConverter,
+                                     JwtTokenStore tokenStore,
+                                     AuthenticationManager authenticationManager) {
+        this.passwordEncoder = passwordEncoder;
+        this.accessTokenConverter = accessTokenConverter;
+        this.tokenStore = tokenStore;
+        this.authenticationManager = authenticationManager;
+    }
 
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) {
@@ -36,8 +47,8 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
-                .withClient("myappname123")
-                .secret(passwordEncoder.encode("myappsecret123"))
+                .withClient(clientName)
+                .secret(passwordEncoder.encode(clientSecret))
                 .scopes("read", "write")
                 .authorizedGrantTypes("password")
                 .accessTokenValiditySeconds(86400);
