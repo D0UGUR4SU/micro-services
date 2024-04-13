@@ -73,6 +73,47 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "hr-config-server",
+			"item": [
+				{
+					"name": "hr-worker configs default profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CONFIG_SERVER}}/hr-worker/default",
+							"host": [
+								"{{CONFIG_SERVER}}"
+							],
+							"path": [
+								"hr-worker",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "hr-worker configs test profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CONFIG_SERVER}}/hr-worker/test",
+							"host": [
+								"{{CONFIG_SERVER}}"
+							],
+							"path": [
+								"hr-worker",
+								"test"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
