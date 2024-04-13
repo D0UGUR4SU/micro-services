@@ -1,10 +1,10 @@
-package com.example.demo;
+package com.spring.hrapigatewayzuul;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EurekaServerApplicationTests {
+class HrApiGatewayZuulApplicationTests {
 
 	@Test
 	void contextLoads() {
