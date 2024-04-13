@@ -7,7 +7,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
-import org.springframework.core.env.Environment;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,7 +21,7 @@ import com.spring.hrworker.repositories.WorkerRepository;
 @RequestMapping("/workers")
 public class WorkerResource {
 
-	private static Logger logger = LoggerFactory.getLogger(WorkerResource.class);
+	private final static Logger logger = LoggerFactory.getLogger(WorkerResource.class);
 
 	private final WorkerRepository workerRepository;
 
@@ -30,14 +29,14 @@ public class WorkerResource {
 	private String testConfig;
 
 	@Autowired
-	public WorkerResource(Environment env, WorkerRepository workerRepository) {
+	public WorkerResource(WorkerRepository workerRepository) {
 		this.workerRepository = workerRepository;
 	}
 
 	@GetMapping("/configs")
 	public ResponseEntity<Void> getConfigs() {
 
-		logger.info("CONFIG = " + testConfig);
+		logger.info("CONFIG = {}", testConfig);
 		return ResponseEntity.noContent().build();
 	}
 	
