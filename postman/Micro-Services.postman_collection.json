@@ -64,6 +64,25 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Actuator refresh",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{API_GATEWAY}}/hr-worker/actuator/refresh",
+							"host": [
+								"{{API_GATEWAY}}"
+							],
+							"path": [
+								"hr-worker",
+								"actuator",
+								"refresh"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
