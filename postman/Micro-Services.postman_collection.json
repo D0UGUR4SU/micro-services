@@ -12,12 +12,22 @@
 				{
 					"name": "All workers",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{API_GATEWAY}}/hr-worker/workers",
+							"raw": "{{api-gateway}}/hr-worker/workers",
 							"host": [
-								"{{API_GATEWAY}}"
+								"{{api-gateway}}"
 							],
 							"path": [
 								"hr-worker",
@@ -30,12 +40,22 @@
 				{
 					"name": "Worker by id",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{API_GATEWAY}}/hr-worker/workers/1",
+							"raw": "{{api-gateway}}/hr-worker/workers/1",
 							"host": [
-								"{{API_GATEWAY}}"
+								"{{api-gateway}}"
 							],
 							"path": [
 								"hr-worker",
@@ -49,12 +69,22 @@
 				{
 					"name": "Show worker configs on console",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{API_GATEWAY}}/hr-worker/workers/configs",
+							"raw": "{{api-gateway}}/hr-worker/workers/configs",
 							"host": [
-								"{{API_GATEWAY}}"
+								"{{api-gateway}}"
 							],
 							"path": [
 								"hr-worker",
@@ -68,12 +98,22 @@
 				{
 					"name": "Actuator refresh",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{API_GATEWAY}}/hr-worker/actuator/refresh",
+							"raw": "{{api-gateway}}/hr-worker/actuator/refresh",
 							"host": [
-								"{{API_GATEWAY}}"
+								"{{api-gateway}}"
 							],
 							"path": [
 								"hr-worker",
@@ -92,12 +132,22 @@
 				{
 					"name": "Payment",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{API_GATEWAY}}/hr-payroll/payments/2/days/20",
+							"raw": "{{api-gateway}}/hr-payroll/payments/2/days/20",
 							"host": [
-								"{{API_GATEWAY}}"
+								"{{api-gateway}}"
 							],
 							"path": [
 								"hr-payroll",
@@ -118,12 +168,22 @@
 				{
 					"name": "hr-worker configs default profile",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{CONFIG_SERVER}}/hr-worker/default",
+							"raw": "{{config-host}}/hr-worker/default",
 							"host": [
-								"{{CONFIG_SERVER}}"
+								"{{config-host}}"
 							],
 							"path": [
 								"hr-worker",
@@ -136,12 +196,22 @@
 				{
 					"name": "hr-worker configs test profile",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{CONFIG_SERVER}}/hr-worker/test",
+							"raw": "{{config-host}}/hr-worker/test",
 							"host": [
-								"{{CONFIG_SERVER}}"
+								"{{config-host}}"
 							],
 							"path": [
 								"hr-worker",
@@ -159,12 +229,22 @@
 				{
 					"name": "Find user by id",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{API_GATEWAY}}/hr-user/users/1",
+							"raw": "{{api-gateway}}/hr-user/users/1",
 							"host": [
-								"{{API_GATEWAY}}"
+								"{{api-gateway}}"
 							],
 							"path": [
 								"hr-user",
@@ -178,12 +258,22 @@
 				{
 					"name": "Find user by email",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{API_GATEWAY}}/hr-user/users/search?email=bob@email.com",
+							"raw": "{{api-gateway}}/hr-user/users/search?email=bob@email.com",
 							"host": [
-								"{{API_GATEWAY}}"
+								"{{api-gateway}}"
 							],
 							"path": [
 								"hr-user",
@@ -208,12 +298,22 @@
 				{
 					"name": "Find user by email",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{API_GATEWAY}}/hr-oauth/users/search?email=bob@email.com",
+							"raw": "{{api-gateway}}/hr-oauth/users/search?email=bob@email.com",
 							"host": [
-								"{{API_GATEWAY}}"
+								"{{api-gateway}}"
 							],
 							"path": [
 								"hr-oauth",
@@ -232,18 +332,33 @@
 				},
 				{
 					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (responseCode.code >= 200 && responseCode.code < 300) {",
+									"    var json = JSON.parse(responseBody);",
+									"    postman.setEnvironmentVariable('token', json.access_token);",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "basic",
 							"basic": [
 								{
 									"key": "password",
-									"value": "myappsecret123",
+									"value": "{{client-secret}}",
 									"type": "string"
 								},
 								{
 									"key": "username",
-									"value": "myappname123",
+									"value": "{{client-name}}",
 									"type": "string"
 								}
 							]
@@ -255,12 +370,12 @@
 							"urlencoded": [
 								{
 									"key": "username",
-									"value": "bob@email.com",
+									"value": "{{username}}",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "123456",
+									"value": "{{password}}",
 									"type": "text"
 								},
 								{
@@ -271,9 +386,9 @@
 							]
 						},
 						"url": {
-							"raw": "{{API_GATEWAY}}/hr-oauth/oauth/token",
+							"raw": "{{api-gateway}}/hr-oauth/oauth/token",
 							"host": [
-								"{{API_GATEWAY}}"
+								"{{api-gateway}}"
 							],
 							"path": [
 								"hr-oauth",
