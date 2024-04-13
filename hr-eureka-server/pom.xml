@@ -11,14 +11,14 @@
 	</parent>
 	
 	<groupId>com.spring</groupId>
-	<artifactId>eureka-server</artifactId>
+	<artifactId>hr-eureka-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>eureka-server</name>
+	<name>hr-eureka-server</name>
 	<description>Eureka Server</description>
 	
 	<properties>
 		<java.version>11</java.version>
-		<spring-cloud.version>2023.0.1</spring-cloud.version>
+		<spring-cloud.version>Hoxton.SR12</spring-cloud.version>
 	</properties>
 	
 	<dependencies>
