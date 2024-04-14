@@ -1,5 +1,5 @@
 FROM openjdk:11
 
 VOLUME /tmp
-ADD ./target/hr-oauth-0.0.1-SNAPSHOT.jar hr-oauth.jar
-ENTRYPOINT ["java", "-jar", "/hr-oauth.jar"]
+ADD ./target/hr-api-gateway-zuul-0.0.1-SNAPSHOT.jar hr-api-gateway-zuul.jar
+ENTRYPOINT ["java", "-jar", "/hr-api-gateway-zuul.jar"]
